@@ -1,0 +1,20 @@
+service: stwits
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  role: arn:aws:iam::746138486164:role/lambdaDynamodb
+
+functions:
+  hello:
+    handler: handler.hello
+    description: Cron job that runs every 30 minutes
+    memorySize: 128
+    events:
+      - schedule: cron(*/30 * * * ? *)
+      - http:
+         path: twits
+         method: get
+    environment:
+      TABLE: AAPL
+      TICKER: AAPL

@@ -3,7 +3,7 @@ service: stwits
 provider:
   name: aws
   runtime: nodejs12.x
-  role: arn:aws:iam::746138486164:role/lambdaDynamodb
+  role: arn:aws:iam::1212132313213:role/lambdaDynamodb
 
 functions:
   hello:
